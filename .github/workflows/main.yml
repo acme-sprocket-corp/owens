@@ -1,0 +1,29 @@
+name: main
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup
+        uses: actions/setup-node@v4
+        with:
+            node-version: latest
+
+      - name: restore
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - name: deploy
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: asc-owns-app-dev
+          publish-profile: ${{ secrets.app_owens_dev }}
+          package: "./dist"
