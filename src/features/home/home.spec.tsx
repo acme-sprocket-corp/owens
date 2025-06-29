@@ -6,6 +6,6 @@ describe("home", () => {
   it("renders", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { name: /home/i}));
+    expect(screen.getByRole("heading", { name: /home/i })).toBeInTheDocument();
   });
 });
