@@ -18,6 +18,9 @@ jobs:
       - name: restore
         run: npm ci
 
+      - name: test
+        run: npm run test:unit
+
       - name: build
         run: npm run build
 
