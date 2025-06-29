@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "pkief.material-icon-theme",
+    "github.vscode-github-actions",
+    "ms-azuretools.vscode-azureappservice",
+    "esbenp.prettier-vscode",
+    "vitest.explorer"
+  ]
+}
