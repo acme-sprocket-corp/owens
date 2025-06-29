@@ -24,6 +24,6 @@ jobs:
       - name: deploy
         uses: azure/webapps-deploy@v3
         with:
-          app-name: asc-owns-app-dev
+          app-name: asc-owens-app-dev
           publish-profile: ${{ secrets.app_owens_dev }}
           package: "./dist"
