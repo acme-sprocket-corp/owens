@@ -14,9 +14,9 @@ jobs:
       - name: build
         run: npm run build:testing
 
-      # - name: deploy
-      #   uses: azure/webapps-deploy@v3
-      #   with:
-      #     app-name: asc-owens-app-dev
-      #     publish-profile: ${{ secrets.app_owens_dev }}
-      #     package: "./dist"
+      - name: deploy
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: asc-owens-app-dev
+          publish-profile: ${{ secrets.app_owens_dev }}
+          package: "./dist"
