@@ -3,10 +3,11 @@ name: deploy testing
 on: workflow_dispatch
 
 jobs:
-  first-step:
+  prepare:
     uses: ./.github/workflows/prepare.yml
 
   deploy:
+    needs: prepare
     runs-on: ubuntu-latest
 
     steps:
