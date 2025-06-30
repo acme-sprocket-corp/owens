@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: prepare
-        run: ./main.yml
+        run: ./.github/workflows/main.yml
 
       - name: build
         run: npm run build:testing
