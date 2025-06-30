@@ -1,9 +1,13 @@
-import { Home } from "../features/home/home";
+import { Outlet } from "react-router";
 
 export const App: React.FC = () => {
   return (
     <div>
-      <Home />
+      <header />
+      <main>
+        <Outlet />
+      </main>
+      <footer />
     </div>
   );
 };
