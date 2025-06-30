@@ -8,6 +8,8 @@ import unicorn from "eslint-plugin-unicorn";
 import prettier from "eslint-plugin-prettier/recommended";
 import compat from "eslint-plugin-compat";
 import storybook from "eslint-plugin-storybook";
+import promise from "eslint-plugin-promise";
+import sonar from "eslint-plugin-sonarjs";
 
 export default tseslint.config([
   globalIgnores(["dist"]),
@@ -20,8 +22,9 @@ export default tseslint.config([
       reactHooks.configs["recommended-latest"],
       reactRefresh.configs.vite,
       unicorn.configs.recommended,
+      sonar.configs.recommended,
+      promise.configs["flat/recommended"],
       compat.configs["flat/recommended"],
-      storybook.configs["flat/recommended"],
       prettier,
     ],
     languageOptions: {
@@ -32,5 +35,9 @@ export default tseslint.config([
         tsconfigRootDir: import.meta.dirname,
       },
     },
+  },
+  {
+    files: ["**/*.stories.*"],
+    extends: [storybook.configs["flat/recommended"]],
   },
 ]);
