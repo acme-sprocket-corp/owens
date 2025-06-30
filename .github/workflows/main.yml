@@ -3,26 +3,11 @@ name: main
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: setup
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-
-      - name: restore
-        run: npm ci
-
-      - name: test
-        run: npm run test:unit
+  test:
+    uses: ./.github/workflows/prepare.yml
 
   deploy:
-    needs: build
+    needs: test
     uses: ./.github/workflows/deploy.yml
     with:
       environment: development

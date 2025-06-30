@@ -1,10 +1,10 @@
-name: Reusable workflow example
+name: prepare
 
 on:
   workflow_call:
 
 jobs:
-  triage:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
