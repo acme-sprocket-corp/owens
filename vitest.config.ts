@@ -5,6 +5,7 @@ export default defineConfig({
     coverage: {
       enabled: true,
       include: ["src/features", "src/common"],
+      exclude: ["**/*.stories.*", "**/*.routes.*", "**/index.*"],
       thresholds: {
         branches: 90,
       },

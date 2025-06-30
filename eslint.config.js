@@ -7,11 +7,12 @@ import { globalIgnores } from "eslint/config";
 import unicorn from "eslint-plugin-unicorn";
 import prettier from "eslint-plugin-prettier/recommended";
 import compat from "eslint-plugin-compat";
+import storybook from "eslint-plugin-storybook";
 
 export default tseslint.config([
   globalIgnores(["dist"]),
   {
-    ignores: ["vitest.config.ts", "src/vite-env.d.ts"],
+    ignores: ["vitest.config.ts", "src/vite-env.d.ts", ".storybook/**"],
     files: ["**/*.{ts,tsx}"],
     extends: [
       js.configs.recommended,
@@ -20,6 +21,7 @@ export default tseslint.config([
       reactRefresh.configs.vite,
       unicorn.configs.recommended,
       compat.configs["flat/recommended"],
+      storybook.configs["flat/recommended"],
       prettier,
     ],
     languageOptions: {
