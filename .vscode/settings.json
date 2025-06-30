@@ -1,0 +1,14 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "eslint.*": ".prettierrc.json, .prettierignore",
+    "tsconfig.json": "tsconfig.*.json",
+    "README.md": "LICENSE",
+    "vite.config.ts": "vitest.config.ts, index.html, .git*",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock"
+  },
+  "files.eol": "\n"
+}
