@@ -4,7 +4,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "eslint.*": ".prettierrc.json, .prettierignore",
+    "eslint.*": ".prettierrc.json, .prettierignore, .editorconfig, .browserslistrc",
     "tsconfig.json": "tsconfig.*.json",
     "README.md": "LICENSE",
     "vite.config.ts": "vitest.config.ts, index.html, .git*",
