@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: build
-        run: npm run build --mode ${{ inputs.environment }}
+        run: npm run build -- --mode ${{ inputs.environment }}
 
       - name: deploy
         uses: azure/webapps-deploy@v3
