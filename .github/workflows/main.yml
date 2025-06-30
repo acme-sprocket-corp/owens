@@ -21,12 +21,11 @@ jobs:
       - name: test
         run: npm run test:unit
 
-      - name: build
-        run: npm run build
-
-      - name: deploy
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: asc-owens-app-dev
-          publish-profile: ${{ secrets.app_owens_dev }}
-          package: "./dist"
+  deploy:
+    needs: build
+    uses: ./github/workflows/deploy.yml
+    with:
+      environment: development
+      app_name: asc-owens-app-dev
+    secrets:
+      publish_profile: ${{ secrets.APP_OWENS_DEV }}
