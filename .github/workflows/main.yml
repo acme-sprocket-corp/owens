@@ -23,7 +23,7 @@ jobs:
 
   deploy:
     needs: build
-    uses: ./github/workflows/deploy.yml
+    uses: ./.github/workflows/deploy.yml
     with:
       environment: development
       app_name: asc-owens-app-dev
