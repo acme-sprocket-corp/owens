@@ -3,13 +3,13 @@ name: deploy testing
 on: workflow_dispatch
 
 jobs:
+  prepare:
+    uses: ./.github/workflows/prepare.yml
+
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: prepare
-        uses: ./.github/workflows/prepare.yml
-
       - name: build
         run: npm run build:testing
 
