@@ -3,7 +3,7 @@ name: deploy testing
 on: workflow_dispatch
 
 jobs:
-  prepare:
+  first-step:
     uses: ./.github/workflows/prepare.yml
 
   deploy:
