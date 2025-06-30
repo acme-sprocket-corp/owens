@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     coverage: {
       enabled: true,
-      include: ["src/features"],
+      include: ["src/features", "src/common"],
       thresholds: {
         branches: 90,
       },

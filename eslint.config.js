@@ -6,6 +6,7 @@ import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
 import unicorn from "eslint-plugin-unicorn";
 import prettier from "eslint-plugin-prettier/recommended";
+import compat from "eslint-plugin-compat";
 
 export default tseslint.config([
   globalIgnores(["dist"]),
@@ -18,6 +19,7 @@ export default tseslint.config([
       reactHooks.configs["recommended-latest"],
       reactRefresh.configs.vite,
       unicorn.configs.recommended,
+      compat.configs["flat/recommended"],
       prettier,
     ],
     languageOptions: {
