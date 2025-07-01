@@ -18,5 +18,11 @@ jobs:
       - name: restore
         run: npm ci
 
+      - name: lint
+        run: npm run lint
+
+      - name: spell-check
+        run: npm run spelling
+
       - name: test
         run: npm run test:unit

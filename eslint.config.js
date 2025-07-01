@@ -10,6 +10,7 @@ import compat from "eslint-plugin-compat";
 import storybook from "eslint-plugin-storybook";
 import promise from "eslint-plugin-promise";
 import sonar from "eslint-plugin-sonarjs";
+import a11y from "eslint-plugin-jsx-a11y";
 
 export default tseslint.config([
   globalIgnores(["dist"]),
@@ -24,6 +25,7 @@ export default tseslint.config([
       unicorn.configs.recommended,
       sonar.configs.recommended,
       promise.configs["flat/recommended"],
+      a11y.flatConfigs.recommended,
       compat.configs["flat/recommended"],
       prettier,
     ],
