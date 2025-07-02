@@ -6,7 +6,7 @@ jobs:
   test:
     uses: ./.github/workflows/prepare.yml
 
-  deploy:
+  deploy-application:
     needs: test
     uses: ./.github/workflows/deploy.yml
     with:
@@ -14,3 +14,11 @@ jobs:
       app_name: asc-owens-app-dev
     secrets:
       publish_profile: ${{ secrets.APP_OWENS_DEV }}
+
+  deploy-storybook:
+    needs: test
+    uses: ./.github/workflows/deploy-storybook.yml
+    with:
+      app_name: asc-storybook-app-dev
+    secrets:
+      publish_profile: ${{ secrets.APP_STORYBOOK_DEV }}
