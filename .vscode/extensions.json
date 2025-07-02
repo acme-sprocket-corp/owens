@@ -8,6 +8,7 @@
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
     "webben.browserslist",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "deque-systems.vscode-axe-linter"
   ]
 }
