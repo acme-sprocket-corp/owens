@@ -7,7 +7,7 @@
     "eslint.*": ".prettierrc.json, .prettierignore, .editorconfig, .browserslistrc",
     "tsconfig.json": "tsconfig.*.json",
     "README.md": "LICENSE, CODE_OF_CONDUCT.*, CONTRIBUTING.*",
-    "vite.config.ts": "vitest.config.ts, index.html, .git*",
+    "vite.config.ts": "vitest.config.ts, index.html, .git*, cypress.config.*",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock"
   },
   "files.eol": "\n"

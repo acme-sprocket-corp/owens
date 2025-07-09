@@ -15,7 +15,12 @@ import a11y from "eslint-plugin-jsx-a11y";
 export default tseslint.config([
   globalIgnores(["dist"]),
   {
-    ignores: ["vitest.config.ts", "src/vite-env.d.ts", ".storybook/**"],
+    ignores: [
+      "vitest.config.ts",
+      "src/vite-env.d.ts",
+      ".storybook/**",
+      "cypress.config.ts",
+    ],
     files: ["**/*.{ts,tsx}"],
     extends: [
       js.configs.recommended,
