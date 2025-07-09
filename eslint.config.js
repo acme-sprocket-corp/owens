@@ -11,9 +11,10 @@ import storybook from "eslint-plugin-storybook";
 import promise from "eslint-plugin-promise";
 import sonar from "eslint-plugin-sonarjs";
 import a11y from "eslint-plugin-jsx-a11y";
+import cypress from "eslint-plugin-cypress";
 
 export default tseslint.config([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist", "storybook-static", "coverage"]),
   {
     ignores: [
       "vitest.config.ts",
@@ -32,6 +33,7 @@ export default tseslint.config([
       promise.configs["flat/recommended"],
       a11y.flatConfigs.recommended,
       compat.configs["flat/recommended"],
+      cypress.configs.recommended,
       prettier,
     ],
     languageOptions: {
@@ -41,6 +43,14 @@ export default tseslint.config([
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
+    },
+    rules: {
+      "unicorn/prevent-abbreviations": [
+        "error",
+        {
+          ignore: ["\e2e$", /^ignore/i],
+        },
+      ],
     },
   },
   {
