@@ -6,7 +6,7 @@ export const Button: React.FC<ButtonProperties> = ({
   handleOnClick,
 }: ButtonProperties) => {
   return (
-    <button className="btn btn-primary" onClick={handleOnClick}>
+    <button className="btn btn-primary" onClick={handleOnClick} type="button">
       {content}
     </button>
   );
