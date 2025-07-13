@@ -8,9 +8,9 @@ jobs:
 
   cypress:
     uses: ./.github/workflows/cypress.yml
-    
+
   deploy-application:
-    needs: test
+    needs: [test, cypress]
     uses: ./.github/workflows/deploy.yml
     with:
       environment: development
@@ -19,7 +19,7 @@ jobs:
       publish_profile: ${{ secrets.APP_OWENS_DEV }}
 
   deploy-storybook:
-    needs: test
+    needs: [test, cypress]
     uses: ./.github/workflows/deploy-storybook.yml
     with:
       app_name: asc-storybook-app-dev
