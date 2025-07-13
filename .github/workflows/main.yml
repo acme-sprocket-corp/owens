@@ -6,6 +6,9 @@ jobs:
   test:
     uses: ./.github/workflows/prepare.yml
 
+  cypress:
+    uses: ./.github/workflows/cypress.yml
+    
   deploy-application:
     needs: test
     uses: ./.github/workflows/deploy.yml

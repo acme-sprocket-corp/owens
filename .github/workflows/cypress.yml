@@ -1,0 +1,30 @@
+name: cypress
+
+on:
+  workflow_call:
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browsers: [firefox, edge, chrome]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: restore
+        run: npm ci
+
+      - name: test e2e
+        uses: cypress-io/github-action@v6
+        with:
+          browser: ${{ matrix.browsers }}
+          build: npm run build
+          start: npm run preview
