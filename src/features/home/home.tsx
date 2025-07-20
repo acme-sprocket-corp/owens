@@ -1,10 +1,10 @@
-import { Button } from "../../common";
+import { Button, Container } from "../../common";
 
 export const Home: React.FC = () => {
   return (
-    <div>
+    <Container>
       <h2>Home</h2>
       <Button content="Button" handleOnClick={() => {}} />
-    </div>
+    </Container>
   );
 };
